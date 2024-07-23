@@ -33,4 +33,8 @@ app.get("/path/:id", (c) => {
 	return c.text(`You see path ${c.req.path}`);
 });
 
+app.get("/very/long/url", (c) => {
+	return c.text(`You see ${c.req.url}`);
+});
+
 export default app;
