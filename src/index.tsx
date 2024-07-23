@@ -1,5 +1,6 @@
 import { Hono } from "hono";
 import { basicAuth } from "hono/basic-auth";
+import { requestId } from "hono/request-id";
 
 const app = new Hono();
 
@@ -78,6 +79,12 @@ app.use(
 
 app.get("/admin", (c) => {
 	return c.text("Admin page");
+});
+
+app.use("*", requestId());
+
+app.get("/requestId", (c) => {
+	return c.text(`Your request id is ${c.get("requestId")}`);
 });
 
 export default app;
