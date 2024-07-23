@@ -6,4 +6,11 @@ app.get("/", (c) => {
 	return c.text("Hello Hono!");
 });
 
-export default app
+app.get("/api/hello", (c) => {
+	return c.json({
+		ok: true,
+		message: "Hello Hono!",
+	});
+});
+
+export default app;
