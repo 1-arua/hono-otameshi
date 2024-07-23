@@ -63,4 +63,8 @@ app.get("/page", (c) => {
 	return c.html(<View />);
 });
 
+app.get("/htmltext", (c) => {
+	return c.text(<View />);
+});
+
 export default app;
