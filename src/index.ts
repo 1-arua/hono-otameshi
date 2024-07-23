@@ -25,4 +25,12 @@ app.get("/queries", (c) => {
 	return c.text(`You want see ${queries?.toString()}`);
 });
 
+app.get("/routePath/:id", (c) => {
+	return c.text(`You see route path ${c.req.routePath}`);
+});
+
+app.get("/path/:id", (c) => {
+	return c.text(`You see path ${c.req.path}`);
+});
+
 export default app;
