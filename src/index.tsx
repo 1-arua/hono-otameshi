@@ -49,4 +49,18 @@ app.delete("/method", (c) => {
 	return c.text(`Your method is ${c.req.method}\n`);
 });
 
+const View = () => {
+	return (
+		<html lang="en">
+			<body>
+				<h1>Hello Hono!</h1>
+			</body>
+		</html>
+	);
+};
+
+app.get("/page", (c) => {
+	return c.html(<View />);
+});
+
 export default app;
