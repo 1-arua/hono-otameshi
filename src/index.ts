@@ -37,4 +37,16 @@ app.get("/very/long/url", (c) => {
 	return c.text(`You see ${c.req.url}`);
 });
 
+app.get("/method", (c) => {
+	return c.text(`Your method is ${c.req.method}\n`);
+});
+
+app.post("/method", (c) => {
+	return c.text(`Your method is ${c.req.method}\n`);
+});
+
+app.delete("/method", (c) => {
+	return c.text(`Your method is ${c.req.method}\n`);
+});
+
 export default app;
