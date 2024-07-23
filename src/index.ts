@@ -20,4 +20,9 @@ app.get("/posts/:id", (c) => {
 	return c.text(`You want see ${page} of ${id}`);
 });
 
+app.get("/queries", (c) => {
+	const queries = c.req.queries("p1");
+	return c.text(`You want see ${queries?.toString()}`);
+});
+
 export default app;
